@@ -1,0 +1,16 @@
+{% extends 'Operator_window/base.html' %}
+{% block title %} My Operator WIndow {% endblock %}
+{% block body %}
+<h4 align="center">The current date is {{ date }} </h4>
+
+<form method="post" enctype="multipart/form-data">
+<div class="container">
+<div class="panel-primary">
+    <div class="panel-heading"><h3>Submit Your Work & Delay</h3></div>
+<h3>{{ name }}</h3>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit"/>
+    </div></div>
+</form>
+{% endblock %}

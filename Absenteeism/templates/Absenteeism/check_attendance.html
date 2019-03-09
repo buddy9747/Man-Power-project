@@ -1,0 +1,20 @@
+
+{% extends 'Absenteeism/master.html' %}
+
+{% block body %}
+
+
+<table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Name</th ><th style="text-align: center;">Date</th><th style="text-align: center;">Status</th></tr></thead>
+   {% for i in m %}
+       <tr style="text-align: center">
+<td >{{ i.name}}</td>
+       <td>{{ i.date }}</td>
+       <td>{{ i.status }}</td>
+       </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

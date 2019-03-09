@@ -1,0 +1,48 @@
+{% extends 'Absenteeism/master.html' %}
+{% block body %}
+    <div align="right">
+        <a href="logout.html"> <p class="btn btn-primary" style="margin-right: 3%; margin-top: -2%">Logout</p></a>
+    </div>
+    <div class="container" style="margin-left: 20%;">
+    <h1>Profile</h1>
+	<p>
+	{{ user.first_name }}
+	{{ user.last_name }}
+        <form method="post">
+
+        <div class="container">
+    <div class="container">
+    <div class="col-sm-6">
+    <div class="panel panel-default">
+    <div class="panel-heading"><h3>Pay your Attendance</h3></div>
+    <div class="panel-body">
+
+        <div class=" date input-group" id="datetimepicker_id_datetime">
+
+
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit" class="btn btn-primary" style="margin-left: 60%">submit</button></div>
+         </div>
+    </div>
+    </div>
+    </div>
+</div>
+        </form>
+<script>
+    $(document).ready(function() {
+    $("#id_Status input[value='Leave']").attr("disabled","disabled");});
+</script>
+<script>(function () {
+
+$(document).ready(function() {
+
+$("#id_datetime").datetimepicker();
+});
+})(jQuery);
+</script>
+
+
+	</p>
+    </div>
+{% endblock %}

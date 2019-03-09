@@ -1,0 +1,46 @@
+{% extends 'Operator_window/dashbase.html' %}
+{% block body %}
+    <h4>{{ d }}</h4><h4>{{ e }}</h4>
+{%load mathfilters%}
+<h1 align="center" style="color:#ff4c17;">Production</h1>
+<h2>Hourly Report</h2><br>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary">
+    <th style="text-align: center;">Hourly Target</th>
+    <th style="text-align: center;">Hourly Achieved</th>
+    <th style="text-align: center;">Current Running Ticket No.</th>
+
+{% for m in a %}
+	<tr style="text-align: center">
+	<td >{{ m.hourly_achieved|mul:1.05 }}</td>
+    <td>{{ m.hourly_achieved }}</td>
+    <td>{{ m.hourly_running_ticket_no }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+<br><br>
+<h2>Daily Report</h2><br>
+<table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Daily Target</th >
+    <th style="text-align: center;">Daily Achieved</th>
+    <th style="text-align: center;">Effiency</th>
+    <th style="text-align: center;">Performance</th></tr></thead>
+
+	<tr style="text-align: center">
+
+    <td>{{ ht }}</td>
+    <td>{{ ha }}</td>
+    <td>{{ effi}}</td>
+    <td>77.35%</td>
+
+
+    </tr>
+</table><br>
+<h3> WIP </h3>
+{% for i in out %}
+<h3>{{ i }}</h3>
+{% endfor %}
+{% endblock %}

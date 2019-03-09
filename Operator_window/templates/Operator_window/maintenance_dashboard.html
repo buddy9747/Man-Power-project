@@ -1,0 +1,41 @@
+{% extends 'Operator_window/dashbase.html' %}
+{% block body %}
+    <h4>{{ d }}</h4><h4>{{ e }}</h4>
+<h1 align="center" style="color:#ff4c17;">Maintenance</h1>
+
+    <h2>Hourly Report</h2><br>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Displace/Waiting</th >
+    <th style="text-align: center;">Setting</th><th style="text-align: center;">Breakdown</th>
+    <th style="text-align: center;">Power Failure</th>
+    </tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.waiting}}</td>
+       <td>{{ m.setting }}</td>
+       <td>{{ m.breakdown }}</td>
+       <td>{{ m.power_failure }}</td>
+
+       </tr>
+{% endfor %}
+</table>
+<h2>Daily Report</h2><br>
+     <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Displace/Waiting</th >
+    <th style="text-align: center;">Setting</th><th style="text-align: center;">Breakdown</th>
+    <th style="text-align: center;">Power Failure</th><th style="text-align: center;">Machine Loss Time</th>
+    </tr></thead>
+
+       <tr style="text-align: center">
+        <td>{{ k}}</td>
+       <td>{{ l }}</td>
+       <td>{{ m }}</td>
+       <td>{{ n }}</td>
+       <td>{{ b }}</td>
+
+       </tr>
+
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'Absenteeism/master.html' %}
+{% block body %}
+    <h1>Calendar View</h1>
+    <div style="margin-left: 20%;">
+    <h1>{{ user.first_name}}
+    {{ user.last_name }}</h1>
+    <table border="5" class="table-condensed">
+
+       <tr>
+           <td width="30%" align="center">
+           {%  for i in data%}
+       <h2>{{ i }}</h2>
+              {% endfor %}
+           </td>
+
+    <td width="30%" style="margin-left: 10%;" align="center">
+        {% for j in status %}
+            <h1>{{ j }}</h1>
+        {% endfor %}</td>
+
+       </tr>
+
+    </table></div>
+{% endblock %}

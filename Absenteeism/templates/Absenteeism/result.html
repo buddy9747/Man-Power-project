@@ -1,0 +1,117 @@
+{% extends 'Absenteeism/master.html' %}
+
+
+{% block body %}
+
+ <nav class="navbar navbar-inverse">
+		    <div class="container-fluid">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#">Insights Dashboard</a>
+		        </div>
+
+		        <ul class="nav navbar-nav navbar-right">
+		            <li><a href=" {% url 'home' %}"><button type="button" class="btn btn-primary">Search Again</button></a></li>
+		        </ul>
+		    </div>
+		</nav>
+
+<div class="main-content">
+
+<div class="row" id="search-parameters">
+	    	<h3>Your Search Parameters</h3>
+
+<button type="button" class="btn btn-outline-primary">Total</button>
+
+<button type="button" class="btn btn-outline-primary">{{ name }}</button>
+<button type="button" class="btn btn-outline-primary">{{ start_date }}</button>
+
+<button type="button" class="btn btn-outline-primary">{{ end_date }}</button>
+
+</div><br><br>
+
+		<div class="row" id="household-counts">
+
+<h3>Total Attendance</h3>
+	       <p> between {{ min_date }} and {{ max_date }} (largest available date range).</p>
+
+	        	
+
+	    </div> <!-- End of household-counts -->
+
+
+
+<br><br><br>
+
+<div class="row" id="household-spending">
+
+
+
+<h5>For the period {{ start_date }} through {{ end_date }}</h5><br>
+<h2> The Total Average Percentage of {{ name }} is {{ average }}</h2>
+     <style>
+	    	body {
+    			font-family: 'Montserrat';
+			}
+
+			.btn-outline-primary {
+				border-color: #FF7011;
+				color: #25303B;
+				pointer-events: none;
+			}
+
+			.btn-primary {
+				background-color: #FF7011;
+				border-color: #FF7011;
+				border-radius: 10px;
+				font-size: 1.2em;
+			}
+
+			h3 {
+				font-weight: bold;
+				color: #25303B;
+			}
+
+			h5 {
+				font-family: 'Montserrat';
+			}
+
+			.main-content {
+				padding-left: 50px;
+				padding-top: 15px;
+    			padding-bottom: 50px;
+
+			}
+
+			.navbar-brand {
+				font-size: 1.75em;
+				font-color: white;
+				font-weight: bold;
+				padding-top: 25px;
+				pointer-events: none;
+			}
+
+			.navbar-inverse {
+				background-color: #25303B;
+				border-radius: 0px
+			}
+
+			.navbar-right {
+				padding-right: 20px;
+			}
+
+			table, th, td {
+    			border: 1px solid #DCDCDC;
+			}
+
+			th {
+				font-size: 1.05em;
+				background-color: #E9E9E9;
+			}
+
+			th, td {
+				padding: 5px;
+			}
+	    </style>
+{% endblock %}
+
+ 

@@ -1,0 +1,2 @@
+user-buddy
+password-buddy123

@@ -1,0 +1,49 @@
+{% extends 'Operator_window/dashbase.html' %}
+{% block body %}
+    <h4>{{ d }}</h4><h4>{{ e }}</h4>
+<h1 align="center" style="color:#ff4c17;">Plan Change SMED</h1>
+
+    <h2>Hourly Report</h2><br>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Machine Issue</th >
+    <th style="text-align: center;">Quality Issue</th><th style="text-align: center;">Trims Issue</th>
+    <th style="text-align: center;">Others</th><th style="text-align: center;">Delay Start</th>
+    <th style="text-align: center;">Demo</th><th style="text-align: center;">Learing</th>
+    <th style="text-align: center;">Full Swing</th></tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.machine_issue}}</td>
+       <td>{{ m.quality_issue }}</td>
+       <td>{{ m.trims_issue }}</td>
+       <td>{{ m.others }}</td>
+       <td>{{ m.delay_start }}</td>
+       <td>{{ m.demo }}</td>
+       <td>{{ m.learning }}</td>
+       <td>{{ m.full_swing }}</td>
+
+       </tr>
+{% endfor %}
+</table>
+    <br><br>
+<h2>Daily Report</h2><br>
+    <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Machine Issue</th >
+    <th style="text-align: center;">Quality Issue</th><th style="text-align: center;">Trims Issue</th>
+    <th style="text-align: center;">Others</th><th style="text-align: center;">Delay Start</th>
+    <th style="text-align: center;">Demo</th><th style="text-align: center;">Learing</th>
+    <th style="text-align: center;">Full Swing</th><th style="text-align: center;">CO Loss Time</th></tr></thead>
+       <tr style="text-align: center">
+<td >{{ k}}</td>
+       <td>{{ l }}</td>
+       <td>{{ m }}</td>
+       <td>{{ n }}</td>
+       <td>{{ s }}</td>
+       <td>{{ t }}</td>
+       <td>{{ u }}</td>
+       <td>{{ v }}</td>
+       <td>{{ b }}</td>
+       </tr>
+    </table>
+{% endblock %}

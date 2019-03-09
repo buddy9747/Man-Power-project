@@ -1,0 +1,49 @@
+{% extends 'Operator_window/dashbase.html' %}
+{% block body %}
+    <h4>{{ d }}</h4><h4>{{ e }}</h4>
+<h1 align="center" style="color:#ff4c17;">Quality</h1>
+
+<h2>Houly Report</h2><br>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Rework tkt No.</th >
+    <th style="text-align: center;">Repair tkt No</th><th style="text-align: center;">Finish Return Tkt No.</th>
+    <th style="text-align: center;">Cutting defects Tkt No.</th><th style="text-align: center;">Cutting Missing ticket No.</th>
+    <th style="text-align: center;">Missing/Holding Ticket Nos.</th></tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.rework_ticket_no}}</td>
+       <td>{{ m.repair_ticket_no }}</td>
+       <td>{{ m.finish_return_ticket_no }}</td>
+       <td>{{ m.cutting_defects_ticket_no }}</td>
+       <td>{{ m.cutting_missing_ticket_no }}</td>
+       <td>{{ m.holding_ticket_no }}</td>
+
+       </tr>
+{% endfor %}
+</table>
+    <br><br>
+
+    <h2>Daily Report</h2><br>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Daily Rework No.</th >
+    <th style="text-align: center;">Daily Repair</th><th style="text-align: center;">Daily Finish Return</th>
+    <th style="text-align: center;">Daily Cutting Defect</th><th style="text-align: center;">Daily Cutting Missing</th>
+    <th style="text-align: center;">Missing/Holding Ticket Nos.</th><th style="text-align: center;">Total pcs</th>
+<th style="text-align: center;">Quality  Loss Time</th><th style="text-align: center;">COQ</th></tr></thead>
+
+       <tr style="text-align: center">
+<td>{{ rw }}</td>
+       <td>{{ rp }}</td>
+       <td>{{ ft }}</td>
+       <td>{{ cd }}</td>
+       <td>{{ cm }}</td>
+       <td>{{ ht }}</td>
+			<td>{{ total }}</td>
+           <td>14.5</td>
+           <td>43.5</td>
+       </tr>
+
+</table>
+{% endblock %}

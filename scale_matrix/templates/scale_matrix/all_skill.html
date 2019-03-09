@@ -1,0 +1,20 @@
+
+{% extends 'scale_matrix/base.html' %}
+
+{% block body %}
+
+
+<table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Name</th ><th style="text-align: center;">Operation</th><th style="text-align: center;">Level</th><th style="text-align: center;">Description</th></tr></thead>
+   {% for i in table %}
+       <tr style="text-align: center">
+<td >{{ i.use}}</td>
+       <td>{{ i.operation }}</td>
+       <td>{{ i.level }}</td>
+       <td>{{ i.skill_desc }}</td>
+       </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
